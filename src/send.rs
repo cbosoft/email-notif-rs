@@ -69,3 +69,14 @@ impl EmailNotifier {
         };
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_send_mail() {
+        let em = EmailNotifier::new("Test");
+        em.send_email("Test".to_string(), "<b>test</b>".to_string());
+    }
+}

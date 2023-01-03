@@ -26,3 +26,13 @@ impl Config {
         serde_json::from_str(data.as_str()).unwrap()
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_config() {
+        let _ = Config::load();
+    }
+}
