@@ -76,7 +76,18 @@ mod tests {
 
     #[test]
     fn test_send_mail() {
-        let em = EmailNotifier::new("Test");
+        let em = EmailNotifier::new("Test1");
         em.send_email("Test".to_string(), "<b>test</b>".to_string());
+    }
+
+    #[test]
+    fn test_capture() {
+        EmailNotifier::new("Test2").capture(|_| {});
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_capture_error() {
+        EmailNotifier::new("Test3").capture(|_| panic!("foo"));
     }
 }
