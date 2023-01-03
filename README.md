@@ -6,11 +6,11 @@ This is a rust implementation of my python script [`email_notifier`](github.com/
 
 # Installation
 
-This package is not on cargo (yet) but will be eventually. For now, add the dependency to your projects as:
+This package is [on cargo](https://crates.io/crates/email-notif). Add the dependency to your projects as:
 
 ```toml
 [dependency]
-email-notif-rs = { git = "https://github.com/cbosoft/email-notif-rs" }
+email-notif-rs = "1.0.0"
 ```
 
 # Usage
