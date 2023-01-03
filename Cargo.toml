@@ -2,11 +2,13 @@
 name = "email-notif"
 version = "0.1.0"
 edition = "2021"
-authors = ["chris <cbosoft@protonmail.com>"]
+authors = ["Christopher Boyle <cbosoft@protonmail.com>"]
 description = "Email notification for status of long running processes."
 readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "email_notif"
 
 [dependencies]
 lettre = "0.10.1"
