@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["Christopher Boyle <cbosoft@protonmail.com>"]
 description = "Email notification for status of long running processes."
 readme = "README.md"
+license = "MIT"
 license-file = "LICENSE.md"
 homepage = "https://github.com/cbosoft/email-notif-rs"
 repository = "https://github.com/cbosoft/email-notif-rs"
