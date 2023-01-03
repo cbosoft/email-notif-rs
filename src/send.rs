@@ -43,14 +43,14 @@ impl EmailNotifier {
         self.send_email(format!("{} Update", self.tag), body);
     }
 
-    fn send_success(&self) {
+    pub fn send_success(&self) {
         self.send_email(
             format!("{} Complete", self.tag),
             format!("{} has completed successfully.", self.tag),
         );
     }
 
-    fn send_error(&self) {
+    pub fn send_error(&self) {
         self.send_email(
             format!("{} Error!", self.tag),
             format!("{} has encountered a error and has panicked.", self.tag),
