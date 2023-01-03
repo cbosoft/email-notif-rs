@@ -1,4 +1,4 @@
-use std::panic::{catch_unwind, resume_unwind};
+use std::panic::{catch_unwind, resume_unwind, UnwindSafe};
 
 use crate::config::Config;
 use lettre::{transport::smtp::authentication::Credentials, Message, SmtpTransport, Transport};
@@ -57,7 +57,10 @@ impl EmailNotifier {
         );
     }
 
-    pub fn capture(self, f: fn(&EmailNotifier) -> ()) {
+    pub fn capture<F>(self, f: F)
+    where
+        F: UnwindSafe + FnOnce(&EmailNotifier) -> (),
+    {
         match catch_unwind(|| {
             f(&self);
         }) {
