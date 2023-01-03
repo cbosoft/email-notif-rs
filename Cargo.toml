@@ -1,6 +1,6 @@
 [package]
 name = "email-notif"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 authors = ["Christopher Boyle <cbosoft@protonmail.com>"]
 description = "Email notification for status of long running processes."
