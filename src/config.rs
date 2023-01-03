@@ -15,12 +15,12 @@ pub struct Config {
 impl Config {
     fn config_path() -> String {
         let home = env::var("HOME").unwrap();
-        let config_path = env::join_paths([home, ".email_notifier.json".to_string()]).unwrap();
-        config_path.into_string().unwrap()
+        format!("{}/{}", home, ".email_notifier.json")
     }
     pub fn load() -> Self {
         let config_path = Self::config_path();
-        let mut f = File::open(config_path).unwrap();
+        let mut f = File::open(config_path.clone())
+            .expect(format!("error opening config file at {}", config_path).as_str());
         let mut data = String::new();
         f.read_to_string(&mut data).unwrap();
         serde_json::from_str(data.as_str()).unwrap()
